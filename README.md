@@ -27,7 +27,7 @@ This project is an Arduino-based automated guitar tuner that uses a stepper moto
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/Automated-Guitar-Tuner.git
+   git clone https://github.com/Milind-Ranjan/Automated-Guitar-Tuner.git
    cd Automated-Guitar-Tuner
 2.	Open the Project in Arduino IDE:
 	•	Open the guitar_tuner.ino file in the Arduino IDE.

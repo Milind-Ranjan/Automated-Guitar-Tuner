@@ -1,49 +1,81 @@
-## Arduino Automatic Guitar Tuner
+# Automated Guitar Tuner
 
-**README.md**
+This project is an Arduino-based automated guitar tuner that uses a stepper motor to adjust the tuning of guitar strings by analyzing their frequencies. The tuner captures the sound of a guitar string, performs a Fast Fourier Transform (FFT) to find the dominant frequency, and then adjusts the tuning peg using a stepper motor to match the desired frequency.
 
-This repository contains the code for an Arduino-based automatic guitar tuner. It utilizes a stepper motor to adjust the tuning based on the detected frequency of the string.
+## Features
+- **Automated Tuning**: Tunes all six strings of a standard guitar.
+- **Frequency Analysis**: Uses the `arduinoFFT` library for accurate frequency detection.
+- **Stepper Motor Control**: Utilizes the `AccelStepper` library for precise motor control.
 
-### Features
+## Hardware Required
+- **Arduino Board**: An Arduino Uno or compatible microcontroller.
+- **Stepper Motor**: A 4-wire stepper motor.
+- **Stepper Motor Driver**: A driver board for controlling the stepper motor.
+- **Microphone/Sensor**: A microphone or piezoelectric sensor to capture the sound.
+- **Breadboard and Jumper Wires**: For connecting the components.
+- **Resistors**: As required for the microphone/sensor circuit.
 
-* Selects a string for tuning (E2 to E4)
-* Records audio from the guitar string
-* Performs Fast Fourier Transform (FFT) to analyze frequency
-* Calculates the difference between measured and target frequency
-* Adjusts the stepper motor to achieve the desired tuning
-* Provides feedback on the measured frequency, target frequency, and adjustment steps
+## Circuit Diagram
+*Include a circuit diagram image here if available.*
 
-### Hardware Requirements
+## Software Requirements
+- **Arduino IDE**: [Download Arduino IDE](https://www.arduino.cc/en/software).
+- **arduinoFFT Library**: Install via Arduino Library Manager.
+- **AccelStepper Library**: Install via Arduino Library Manager.
 
-* Arduino board (any model with enough pins)
-* Stepper motor (including driver shield if necessary)
-* Microphone (piezoelectric or electret)
-* Connecting wires
-* Guitar
+## Installation
 
-### Software Requirements
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/Automated-Guitar-Tuner.git
+   cd Automated-Guitar-Tuner
+2.	Open the Project in Arduino IDE:
+	•	Open the guitar_tuner.ino file in the Arduino IDE.
+3.	Connect the Arduino:
+	•	Connect your Arduino board to your computer using a USB cable.
+4.	Upload the Code:
+	•	Select the correct board and port in the Arduino IDE.
+	•	Click the Upload button to upload the code to your Arduino.
 
-* Arduino IDE ([https://www.arduino.cc/](https://www.arduino.cc/))
-* Libraries:
-    * arduinoFFT
-    * AccelStepper
+## How It Works
 
-**Note:** You may need to install the libraries mentioned above through the Arduino IDE Library Manager.
+1.	Start the Tuner:
+	•	Open the serial monitor in the Arduino IDE.
+	•	The tuner will prompt you to select a guitar string to tune by entering a number (0-5):
+	•	0: 6th String (E2)
+	•	1: 5th String (A2)
+	•	2: 4th String (D3)
+	•	3: 3rd String (G3)
+	•	4: 2nd String (B3)
+	•	5: 1st String (E4)
+2.	Recording Audio:
+	•	The tuner records audio for a few seconds to capture the frequency of the selected string.
+	•	The arduinoFFT library is used to perform a Fast Fourier Transform (FFT) on the recorded samples to find the dominant frequency.
+3.	Tuning the String:
+	•	The detected frequency is compared to the target frequency for the selected string.
+	•	The difference between the detected and target frequencies is calculated.
+	•	The stepper motor is then adjusted to correct the tuning by rotating the tuning peg.
+4.	Repeat for Other Strings:
+	•	Repeat the process for each string until the guitar is fully tuned.
 
-### Using the Code
+## Example Output
 
-1. **Download or clone this repository.**
-2. **Install the required libraries in your Arduino IDE.** You can find them in the Library Manager by going to Sketch > Include Library > Manage Libraries. Search for the library names and install them.
-3. **Connect the hardware components according to the pin definitions in the code (`guitar_tuner.ino`).** The code should have comments specifying which pins connect to each component.
-4. **Open `guitar_tuner.ino` in the Arduino IDE.**
-5. **Upload the code to your Arduino board.**
-6. **Follow the on-screen instructions to select a string and initiate tuning.**
+Sample output from the serial monitor:
+Select a string to tune (0-5):
+0: 6th String (E2)
+1: 5th String (A2)
+2: 4th String (D3)
+3: 3rd String (G3)
+4: 2nd String (B3)
+5: 1st String (E4)
 
-### Additional Information
+Selected String: 2
+Recording audio for 1 seconds...
+Recording complete.
+Measured Frequency (Hz): 146.50
+Target Frequency (Hz): 146.83
+Adjustment Steps: 2
 
-* The code assumes a reference pitch of A4 = 440 Hz. You can modify this value in the code if needed.
-* The calibration of the stepper motor for tuning adjustments might require fine-tuning based on your specific setup. This may involve adjusting values in the code related to the stepper motor steps and frequency conversion.
+## Contributing
 
-### Contributing
-
-We welcome contributions to improve this project. Feel free to fork the repository, make changes, and submit a pull request.
+Contributions are welcome! Feel free to submit a pull request or open an issue if you have suggestions for improvements or if you find any bugs.

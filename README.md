@@ -61,7 +61,9 @@ This project is an Arduino-based automated guitar tuner that uses a stepper moto
 ## Example Output
 
 Sample output from the serial monitor:
+
 Select a string to tune (0-5):
+
 0: 6th String (E2)
 1: 5th String (A2)
 2: 4th String (D3)
@@ -70,15 +72,10 @@ Select a string to tune (0-5):
 5: 1st String (E4)
 
 Selected String: 2
-
 Recording audio for 1 seconds...
-
 Recording complete.
-
 Measured Frequency (Hz): 146.50
-
 Target Frequency (Hz): 146.83
-
 Adjustment Steps: 2
 
 ## Contributing

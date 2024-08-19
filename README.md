@@ -43,11 +43,11 @@ This project is an Arduino-based automated guitar tuner that uses a stepper moto
 	•	Open the serial monitor in the Arduino IDE.
 	•	The tuner will prompt you to select a guitar string to tune by entering a number (0-5):
 	- 0: 6th String (E2)
-	-	1: 5th String (A2)
-	-	2: 4th String (D3)
-	-	3: 3rd String (G3)
-	-	4: 2nd String (B3)
-	-	5: 1st String (E4)
+	- 1: 5th String (A2)
+	- 2: 4th String (D3)
+	- 3: 3rd String (G3)
+	- 4: 2nd String (B3)
+	- 5: 1st String (E4)
 2.	Recording Audio:
 	•	The tuner records audio for a few seconds to capture the frequency of the selected string.
 	•	The arduinoFFT library is used to perform a Fast Fourier Transform (FFT) on the recorded samples to find the dominant frequency.
@@ -62,12 +62,12 @@ This project is an Arduino-based automated guitar tuner that uses a stepper moto
 
 Sample output from the serial monitor:
 Select a string to tune (0-5):
-0: 6th String (E2)
-1: 5th String (A2)
-2: 4th String (D3)
-3: 3rd String (G3)
-4: 2nd String (B3)
-5: 1st String (E4)
+- 0: 6th String (E2)
+- 1: 5th String (A2)
+- 2: 4th String (D3)
+- 3: 3rd String (G3)
+- 4: 2nd String (B3)
+- 5: 1st String (E4)
 
 Selected String: 2
 Recording audio for 1 seconds...
